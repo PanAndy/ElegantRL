@@ -162,22 +162,22 @@ def check_get_gym_env_args():
 
 if __name__ == '__main__':
     check_gym_single()
-    check_gym_vector()
-    check_get_gym_env_args()
+    # check_gym_vector()
+    # check_get_gym_env_args()
 
-    # Parser = ArgumentParser(description='ArgumentParser for ElegantRL')
-    # Parser.add_argument('--gpu', type=int, default=0, help='GPU device ID for training')
-    # Parser.add_argument('--drl', type=int, default=0, help='RL algorithms ID for training')
-    # Parser.add_argument('--env', type=str, default='0', help='the environment ID for training')
-    #
-    # Args = Parser.parse_args()
-    # GPU_ID = Args.gpu
-    # DRL_ID = Args.drl
-    # ENV_ID = Args.env
-    #
-    # if ENV_ID in {'0', 'pendulum'}:
-    #     train_ppo_a2c_for_pendulum()
-    # elif ENV_ID in {'1', 'pendulum_vec'}:
-    #     train_ppo_a2c_for_pendulum_vec_env()
-    # else:
-    #     print('ENV_ID not match')
+    Parser = ArgumentParser(description='ArgumentParser for ElegantRL')
+    Parser.add_argument('--gpu', type=int, default=0, help='GPU device ID for training')
+    Parser.add_argument('--drl', type=int, default=0, help='RL algorithms ID for training')
+    Parser.add_argument('--env', type=str, default='0', help='the environment ID for training')
+
+    Args = Parser.parse_args()
+    GPU_ID = Args.gpu
+    DRL_ID = Args.drl
+    ENV_ID = Args.env
+
+    if ENV_ID in {'0', 'pendulum'}:
+        train_ppo_a2c_for_pendulum()
+    elif ENV_ID in {'1', 'pendulum_vec'}:
+        train_ppo_a2c_for_pendulum_vec_env()
+    else:
+        print('ENV_ID not match')
